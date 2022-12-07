@@ -8,5 +8,47 @@ html {
 }
 
 body {
+  font-family: 'Raleway', sans-serif;
   margin: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #2a2a2a;
+}
+
+button {
+  font: inherit;
+  border: none;
+  background-color: transparent;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.fade-appear {
+  opacity: 0;
+}
+.fade-appear-active {
+  opacity: 1;
+  transition: opacity 800ms;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 800ms;
+}
+.fade-exit {
+  opacity: 0;
 }
