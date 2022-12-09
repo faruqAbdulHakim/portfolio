@@ -1,5 +1,29 @@
 .home {
+  width: 80%;
+  margin: 0 auto;
   min-height: calc(100vh - 10rem);
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.desc1, .desc2 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.desc2 {
+  margin-left: 3rem;
+}
+
+@media screen and (min-width: 540px) {
+  .desc1, .desc2 {
+    font-size: 4.5rem;
+  }
 }
