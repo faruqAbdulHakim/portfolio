@@ -22,15 +22,15 @@ body {
   margin: 0;
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 4px;
 }
 
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: transparent;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background-color: #2a2a2a;
 }
 
