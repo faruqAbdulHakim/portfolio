@@ -1,0 +1,18 @@
+.project_item {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075);
+  transition: all ease-out 150ms;
+}
+
+.project_item h3 {
+  font-size: 1rem;
+}
+
+.project_item img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  filter: grayscale(0.4);
+}
+
+.project_item h3 {
+  padding: 1rem;
+}

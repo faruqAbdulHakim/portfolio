@@ -7,6 +7,58 @@ html {
   overflow-y: scroll;
 }
 
-body {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #2a2a2a;
+}
+
+button {
+  font: inherit;
+  border: none;
+  background-color: transparent;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.fade-appear {
+  opacity: 0;
+}
+.fade-appear-active {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.fade-exit {
+  opacity: 0;
 }
