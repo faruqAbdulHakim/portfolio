@@ -4,7 +4,8 @@
  *  title: string;
  *  subtitle: string;
  *  imgUrl: string;
- *  desc: string;
+ *  desc?: string;
+ *  isPrivate: boolean;
  *  externalUrl?: string;
  * }[]}
  */
@@ -12,7 +13,7 @@ const getPortfolioList = () => {
   return [
     {
       title: 'HTML Email Development',
-      subtitle: 'HTML, CSS',
+      subtitle: 'InDesign, Adobe XD, HTML, CSS',
       imgUrl: '/porto-html-email.png',
       desc: '',
     },
@@ -21,6 +22,19 @@ const getPortfolioList = () => {
       subtitle: 'Figma, HTML, CSS',
       imgUrl: '/porto-html-signature.png',
       desc: '',
+    },
+    {
+      title: 'Slicing UI',
+      subtitle: 'HTML, CSS, JS, API',
+      imgUrl: '/porto-slicing-ui.png',
+      desc: '',
+      externalUrl: 'https://faruqabdulhakim.github.io/slicing-ui/',
+    },
+    {
+      title: 'Human Resource App',
+      subtitle: 'Android, Kotlin, Jetpack Compose, MVVM',
+      desc: '',
+      isPrivate: true,
     },
     {
       title: 'Pemro.id',
