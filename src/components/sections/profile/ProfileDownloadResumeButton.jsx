@@ -2,7 +2,18 @@
 
 const ProfileDownloadResumeButton = () => {
   const buttonClickHandler = () => {
-    alert('Not Implemented yet');
+    fetch('/resume.pdf', {
+      method: 'GET',
+    }).then((response) => {
+      if (!response.ok) return;
+      response.blob().then((value) => {
+        const url = window.URL.createObjectURL(value);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'resume.pdf');
+        link.click();
+      });
+    });
   };
 
   return (
