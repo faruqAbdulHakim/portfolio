@@ -1,21 +1,66 @@
-import ContactSection from '@/components/sections/contact/ContactSection';
-import ExperienceSection from '@/components/sections/experience/ExperienceSection';
-import IntroductionSection from '@/components/sections/introduction/IntroductionSection';
-import PortfolioSection from '@/components/sections/portfolio/PortfolioSection';
-import ProfileSection from '@/components/sections/profile/ProfileSection';
-import SkillsSection from '@/components/sections/skills/SkillsSection';
+import Image from 'next/image';
+import DownloadResumeButton from './components/download-resume-buton';
+import SkillList from './components/skill-list';
+import ExperienceList from './components/experience-list';
+import PortfolioList from './components/portfolio-list';
+import ContactList from './components/contact-list';
 
-const Homepage = () => {
+export default async function HomePage() {
   return (
-    <div className="items-center w-10/12 max-w-[960px] mx-auto py-8 space-y-8 text-very-dark-blue">
-      <ProfileSection />
-      <IntroductionSection />
-      <SkillsSection />
-      <ExperienceSection />
-      <PortfolioSection />
-      <ContactSection />
-    </div>
-  );
-};
+    <>
+      <header className='w-11/12 mx-auto max-w-screen-lg py-4 flex flex-col items-center gap-4 sm:flex-row sm:justify-between'>
+        <div className='flex flex-col items-center gap-2 text-center sm:flex-row sm:text-left sm:gap-6'>
+          <div className='relative w-24 h-24 rounded-full overflow-hidden'>
+            <Image src='/avatar.jpg' alt='avatar' fill sizes='30vw' />
+          </div>
+          <div>
+            <h1 className='font-bold text-2xl'>Faruq Abdul Hakim</h1>
+            <p>East Java, Indonesia</p>
+          </div>
+        </div>
+        <DownloadResumeButton />
+      </header>
 
-export default Homepage;
+      <main className='py-4 w-11/12 mx-auto max-w-screen-lg'>
+        <section>
+          <h2 className='font-bold text-2xl'>Introduction</h2>
+          <p className='mt-4'>
+            My name is Faruq Abdul Hakim, usually called Faruq. Received
+            Bachelor of Information Systems degree from the University of Jember
+            in 2024. I have a high interest in the software development field,
+            especially in Web Development and Android Development.
+          </p>
+          <p className='mt-2'>
+            As Frontend Web Developer, I&lsquo;m familiar with various popular
+            frontend technologies, such as HTML5, CSS3, Modern JavaScript,
+            React.js, Tailwind CSS, etc. I also do some small tasks from my
+            freelancer job, like converting the provided design into a
+            responsive site or doing HTML email for company marketing purposes.
+          </p>
+          <p className='mt-2'>
+            I love to explore new things. Since I have Frontend Web development
+            experience, I learned a few technologies for the Backend development
+            side using Express.js as the main framework. Furthermore, I also explore Android Development using Kotlin, XML layouts, Jetpack
+            Compose, and so on.
+          </p>
+        </section>
+        <section className='mt-6'>
+          <h2 className='font-bold text-2xl mb-4'>Skills</h2>
+          <SkillList />
+        </section>
+        <section className='mt-8'>
+          <h2 className='font-bold text-2xl mb-4'>Experience</h2>
+          <ExperienceList />
+        </section>
+        <section className='mt-8'>
+          <h2 className='font-bold text-2xl mb-4'>Portfolio</h2>
+          <PortfolioList />
+        </section>
+        <section className='mt-8'>
+          <h2 className='font-bold text-2xl mb-4'>Contact</h2>
+          <ContactList />
+        </section>
+      </main>
+    </>
+  );
+}
