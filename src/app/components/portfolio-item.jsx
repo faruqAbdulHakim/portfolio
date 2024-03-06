@@ -21,7 +21,7 @@ export default function PortfolioItem({ portfolio }) {
               sizes='(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 25vw'
               objectFit='cover'
               objectPosition='top center'
-              className='group-hover:scale-105 transition-all'
+              className='group-hover:scale-105 transition-all dark:brightness-75 dark:hover:brightness-100'
             />
           )}
         </div>
