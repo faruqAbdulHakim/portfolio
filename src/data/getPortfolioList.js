@@ -12,13 +12,13 @@
 const getPortfolioList = () => {
   return [
     {
-      title: 'HTML Email Development',
+      title: 'HTML Email Newsletter',
       subtitle: 'InDesign, Adobe XD, HTML, CSS',
       imgUrl: '/porto-html-email.png',
       desc: '',
     },
     {
-      title: 'Email Signature Design and Development',
+      title: 'HTML Email Signature',
       subtitle: 'Figma, HTML, CSS',
       imgUrl: '/porto-html-signature.png',
       desc: '',
