@@ -1,4 +1,5 @@
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import { Manrope } from 'next/font/google';
 import './globals.css';
 import Providers from './providers';
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
           </div>
         </Providers>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
