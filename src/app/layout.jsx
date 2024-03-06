@@ -2,6 +2,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Manrope } from 'next/font/google';
 import './globals.css';
 import Providers from './providers';
+import ThemeSwitcher from './components/theme-switcher';
 
 const manrope = Manrope({ subsets: ['latin'] });
 
@@ -13,10 +14,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang='en' className='transition-all'>
       <body className={manrope.className}>
         <Providers>
           {children}
+          <div className='fixed bottom-8 left-6 z-50'>
+            <ThemeSwitcher />
+          </div>
         </Providers>
         <SpeedInsights />
       </body>
