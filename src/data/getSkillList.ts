@@ -1,8 +1,6 @@
-/**
- *
- * @returns {string[]}
- */
-const getSkillList = () => {
+export type Skill = string;
+
+export function getSkillList(): Skill[] {
   return [
     'Figma',
     'HTML',
@@ -19,6 +17,4 @@ const getSkillList = () => {
     'HTML Email',
     'etc',
   ];
-};
-
-export default getSkillList;
+}

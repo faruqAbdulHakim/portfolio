@@ -1,8 +1,12 @@
 import { Button } from '@nextui-org/react';
 import { PiBriefcase } from 'react-icons/pi';
-import ExperienceDetail from './experience-detail';
+import { Experience } from '@/data/getExperienceList';
 
-export default function ExperienceItem({ experience }) {
+type Props = Readonly<{
+  experience: Experience;
+}>;
+
+export default function ExperienceItem({ experience }: Props) {
   const { position, location, type } = experience;
 
   return (
@@ -25,7 +29,6 @@ export default function ExperienceItem({ experience }) {
           </p>
         </div>
       </div>
-      <ExperienceDetail />
     </li>
   );
 }

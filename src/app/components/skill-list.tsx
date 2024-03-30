@@ -1,4 +1,4 @@
-import getSkillList from '@/data/getSkillList';
+import { getSkillList } from '@/data/getSkillList';
 import SkillItem from './skill-item';
 
 export default async function SkillList() {

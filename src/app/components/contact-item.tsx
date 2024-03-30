@@ -1,6 +1,11 @@
+import { Contact } from '@/data/getContactList';
 import { Button, Link } from '@nextui-org/react';
 
-export default function ContactItem({ contact }) {
+type Props = Readonly<{
+  contact: Contact;
+}>;
+
+export default function ContactItem({ contact }: Props) {
   const { name, content, contentLink, Icon } = contact;
   return (
     <li className='flex flex-col sm:flex-row justify-between sm:items-center gap-2'>
@@ -16,11 +21,7 @@ export default function ContactItem({ contact }) {
         <div className='flex flex-col'>
           <p className='font-semibold text-base'>{name}</p>
           {contentLink && (
-            <Link
-              href={contentLink}
-              target='_blank'
-              className='text-sm'
-            >
+            <Link href={contentLink} target='_blank' className='text-sm'>
               {content}
             </Link>
           )}

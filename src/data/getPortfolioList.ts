@@ -1,15 +1,13 @@
-/**
- *
- * @returns {{
- *  title: string;
- *  subtitle: string;
- *  imgUrl: string;
- *  desc?: string;
- *  isPrivate: boolean;
- *  externalUrl?: string;
- * }[]}
- */
-const getPortfolioList = () => {
+export type Portfolio = {
+  title: string;
+  subtitle: string;
+  imgUrl?: string;
+  desc?: string;
+  isPrivate?: boolean;
+  externalUrl?: string;
+};
+
+export function getPortfolioList(): Portfolio[] {
   return [
     {
       title: 'HTML Email Newsletter',
@@ -49,6 +47,4 @@ const getPortfolioList = () => {
       desc: '',
     },
   ];
-};
-
-export default getPortfolioList;
+}

@@ -1,14 +1,12 @@
-/**
- *
- * @returns {{
- *  position: string;
- *  location: string;
- *  type?: string;
- *  startDate: Date;
- *  endDate: Date;
- * }[]}
- */
-const getExperienceList = () => {
+export type Experience = {
+  position: string;
+  location: string;
+  type?: string;
+  startDate: Date;
+  endDate: Date;
+};
+
+export function getExperienceList(): Experience[] {
   return [
     {
       position: 'Freelance Developer',
@@ -31,6 +29,4 @@ const getExperienceList = () => {
       endDate: new Date('2023-06'),
     },
   ];
-};
-
-export default getExperienceList;
+}

@@ -1,7 +1,12 @@
+import { Portfolio } from '@/data/getPortfolioList';
 import { Button } from '@nextui-org/react';
 import Image from 'next/image';
 
-export default function PortfolioItem({ portfolio }) {
+type Props = Readonly<{
+  portfolio: Portfolio;
+}>;
+
+export default function PortfolioItem({ portfolio }: Props) {
   const { title, subtitle, imgUrl, isPrivate } = portfolio;
 
   return (
@@ -13,7 +18,7 @@ export default function PortfolioItem({ portfolio }) {
       >
         <div className='aspect-video relative rounded-xl overflow-hidden grid place-content-center bg-primary-50'>
           {isPrivate && <p>This project is private</p>}
-          {!isPrivate && (
+          {!isPrivate && imgUrl && (
             <Image
               src={imgUrl}
               alt={title}

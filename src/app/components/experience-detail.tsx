@@ -9,7 +9,7 @@ import {
   useDisclosure,
 } from '@nextui-org/react';
 
-export default function ExperienceDetail({ experience }) {
+export default function ExperienceDetail() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (

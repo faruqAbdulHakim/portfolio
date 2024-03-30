@@ -1,4 +1,4 @@
-import getExperienceList from '@/data/getExperienceList';
+import { getExperienceList } from '@/data/getExperienceList';
 import ExperienceItem from './experience-item';
 
 export default async function ExperienceList() {

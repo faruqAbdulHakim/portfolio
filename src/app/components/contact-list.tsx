@@ -1,4 +1,4 @@
-import getContactList from '@/data/getContactList';
+import { getContactList } from '@/data/getContactList';
 import ContactItem from './contact-item';
 
 export default async function ContactList() {

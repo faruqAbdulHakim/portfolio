@@ -1,4 +1,4 @@
-import getPortfolioList from '@/data/getPortfolioList';
+import { getPortfolioList } from '@/data/getPortfolioList';
 import PortfolioItem from './portfolio-item';
 
 export default async function PortfolioList() {

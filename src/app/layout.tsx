@@ -13,7 +13,11 @@ export const metadata = {
   authors: [{ name: 'Faruq Abdul Hakim' }],
 };
 
-export default function RootLayout({ children }) {
+type Props = Readonly<{
+  children: React.ReactNode;
+}>;
+
+export default function RootLayout({ children }: Props) {
   return (
     <html lang='en' className='transition-all'>
       <body className={manrope.className}>

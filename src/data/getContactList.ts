@@ -1,14 +1,18 @@
+import { IconType } from 'react-icons';
 import {
   PiEnvelopeLight,
   PiLinkedinLogoLight,
   PiGithubLogoLight,
 } from 'react-icons/pi';
 
-/**
- *
- * @returns {{name: string, content: string, contentLink: string, Icon: import('react-icons').IconType}[]}
- */
-const getContactList = () => {
+export type Contact = {
+  name: string;
+  content: string;
+  contentLink: string;
+  Icon: IconType;
+};
+
+export function getContactList(): Contact[] {
   return [
     {
       name: 'Email',
@@ -29,6 +33,4 @@ const getContactList = () => {
       Icon: PiGithubLogoLight,
     },
   ];
-};
-
-export default getContactList;
+}
