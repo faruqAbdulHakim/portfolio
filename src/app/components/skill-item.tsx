@@ -1,4 +1,7 @@
-import { Skill } from '@/data/getSkillList';
+// Types
+import { Skill } from '@/types';
+
+// UI Components
 import { Chip } from '@nextui-org/react';
 
 type Props = Readonly<{

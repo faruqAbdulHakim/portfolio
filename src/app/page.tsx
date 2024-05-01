@@ -1,9 +1,10 @@
+// Components
 import Image from 'next/image';
+import ContactList from './components/contact-list';
 import DownloadResumeButton from './components/download-resume-buton';
-import SkillList from './components/skill-list';
 import ExperienceList from './components/experience-list';
 import PortfolioList from './components/portfolio-list';
-import ContactList from './components/contact-list';
+import SkillList from './components/skill-list';
 
 export default async function HomePage() {
   return (
@@ -40,7 +41,8 @@ export default async function HomePage() {
           <p className='mt-2'>
             I love to explore new things. Since I have Frontend Web development
             experience, I learned a few technologies for the Backend development
-            side using Express.js as the main framework. Furthermore, I also explore Android Development using Kotlin, XML layouts, Jetpack
+            side using Express.js as the main framework. Furthermore, I also
+            explore Android Development using Kotlin, XML layouts, Jetpack
             Compose, and so on.
           </p>
         </section>

@@ -1,5 +1,8 @@
-import CONFIG from '@/global/config';
-import { MetadataRoute } from 'next';
+// Types
+import type { MetadataRoute } from 'next';
+
+// Global
+import { CONFIG } from '@/global';
 
 export default function robots(): MetadataRoute.Robots {
   return {

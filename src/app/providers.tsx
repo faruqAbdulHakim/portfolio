@@ -1,7 +1,10 @@
 'use client';
 
-import { NextUIProvider } from '@nextui-org/react';
+// Providers
 import { ThemeProvider } from 'next-themes';
+
+// UI Components
+import { NextUIProvider } from '@nextui-org/react';
 
 type Props = Readonly<{
   children: React.ReactNode;

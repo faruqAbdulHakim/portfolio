@@ -1,4 +1,7 @@
-import { Contact } from '@/data/getContactList';
+// Types
+import type { Contact } from '@/types';
+
+// UI Components
 import { Button, Link } from '@nextui-org/react';
 
 type Props = Readonly<{

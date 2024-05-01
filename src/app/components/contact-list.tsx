@@ -1,7 +1,10 @@
-import { getContactList } from '@/data/getContactList';
+// Data Source
+import { getContactList } from '@/data';
+
+// Components
 import ContactItem from './contact-item';
 
-export default async function ContactList() {
+export default function ContactList() {
   const contacts = getContactList();
 
   return (

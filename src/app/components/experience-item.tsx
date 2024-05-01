@@ -1,6 +1,11 @@
+// Types
+import type { Experience } from '@/types';
+
+// UI Components
 import { Button } from '@nextui-org/react';
+
+// Icons
 import { PiBriefcase } from 'react-icons/pi';
-import { Experience } from '@/data/getExperienceList';
 
 type Props = Readonly<{
   experience: Experience;

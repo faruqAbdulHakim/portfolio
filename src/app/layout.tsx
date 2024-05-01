@@ -1,13 +1,24 @@
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
-import { Manrope } from 'next/font/google';
-import './globals.css';
-import Providers from './providers';
-import ThemeSwitcher from './components/theme-switcher';
-import { Metadata } from 'next';
-import CONFIG from '@/global/config';
+// Types
+import type { Metadata } from 'next';
 
-const manrope = Manrope({ subsets: ['latin'] });
+// Vercel Features
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
+// Providers
+import Providers from './providers';
+
+// Components
+import ThemeSwitcher from './components/theme-switcher';
+
+// Global
+import { CONFIG } from '@/global';
+
+// Theme
+import { fonts } from '@/theme';
+
+// Static
+import './globals.css';
 
 export const metadata: Metadata = {
   title: "Hi, I'm Faruq 👋",
@@ -40,7 +51,7 @@ type Props = Readonly<{
 export default function RootLayout({ children }: Props) {
   return (
     <html lang='en' className='transition-all'>
-      <body className={manrope.className}>
+      <body className={fonts.manrope.className}>
         <Providers>
           {children}
           <div className='fixed bottom-8 left-6 z-50'>

@@ -1,7 +1,12 @@
 'use client';
 
-import { Button } from '@nextui-org/react';
+// Hooks
 import { useTheme } from 'next-themes';
+
+// UI Components
+import { Button } from '@nextui-org/react';
+
+// Icons
 import { PiMoonStarsBold, PiSunBold } from 'react-icons/pi';
 
 export default function ThemeSwitcher() {

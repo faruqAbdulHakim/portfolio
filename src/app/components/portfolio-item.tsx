@@ -1,5 +1,10 @@
-import { Portfolio } from '@/data/getPortfolioList';
+// Types
+import { Portfolio } from '@/types';
+
+// UI Components
 import { Button } from '@nextui-org/react';
+
+// Components
 import Image from 'next/image';
 
 type Props = Readonly<{

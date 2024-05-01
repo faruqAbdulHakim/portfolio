@@ -1,7 +1,10 @@
-import { getExperienceList } from '@/data/getExperienceList';
+// Data Source
+import { getExperienceList } from '@/data';
+
+// Components
 import ExperienceItem from './experience-item';
 
-export default async function ExperienceList() {
+export default function ExperienceList() {
   const experiences = getExperienceList();
 
   return (
