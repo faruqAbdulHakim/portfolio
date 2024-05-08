@@ -1,7 +1,8 @@
 export type Experience = {
   position: string;
   location: string;
-  type?: string;
+  type?: 'Freelance' | 'Contract';
   startDate: Date;
-  endDate: Date;
+  endDate?: Date;
+  description?: string;
 };

@@ -28,9 +28,9 @@ export default function ThemeSwitcher() {
       className='bg-slate-100 text-warning dark:bg-warning dark:text-white transition'
     >
       {theme === 'dark' ? (
-        <PiMoonStarsBold className='w-20 h-20 p-3' />
-      ) : (
         <PiSunBold className='w-20 h-20 p-3' />
+      ) : (
+        <PiMoonStarsBold className='w-20 h-20 p-3' />
       )}
     </Button>
   );

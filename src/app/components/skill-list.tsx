@@ -1,16 +1,30 @@
-// Data Source
-import { getSkillList } from '@/data';
-
-// Components
-import SkillItem from './skill-item';
+// UI Components
+import { Chip } from '@nextui-org/react';
 
 export default async function SkillList() {
-  const skills = getSkillList();
+  const skills = [
+    'Figma',
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Next',
+    'Node.js',
+    'Express',
+    'Postgre SQL',
+    'Android',
+    'Kotlin',
+    'Jetpack Compose',
+    'HTML Email',
+    'etc',
+  ];
 
   return (
     <ul className='flex flex-wrap gap-4'>
       {skills.map((skill) => (
-        <SkillItem key={skill} skill={skill} />
+        <li key={skill}>
+          <Chip variant='flat'>{skill}</Chip>
+        </li>
       ))}
     </ul>
   );

@@ -1,8 +1,8 @@
 export type Portfolio = {
   title: string;
   subtitle: string;
-  imgUrl?: string;
-  desc?: string;
+  previewUrl?: string;
+  description?: string;
   isPrivate?: boolean;
   externalUrl?: string;
 };

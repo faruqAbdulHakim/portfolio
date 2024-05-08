@@ -12,7 +12,7 @@ type Props = Readonly<{
 }>;
 
 export default function PortfolioItem({ portfolio }: Props) {
-  const { title, subtitle, imgUrl, isPrivate } = portfolio;
+  const { title, subtitle, previewUrl, isPrivate } = portfolio;
 
   return (
     <li>
@@ -20,19 +20,21 @@ export default function PortfolioItem({ portfolio }: Props) {
         variant='light'
         className='group block w-full h-max p-0 whitespace-break-spaces'
         data-hover='false'
+        aria-label={title}
       >
         <div className='aspect-video relative rounded-xl overflow-hidden grid place-content-center bg-primary-50'>
-          {isPrivate && <p>This project is private</p>}
-          {!isPrivate && imgUrl && (
+          {previewUrl ? (
             <Image
-              src={imgUrl}
+              src={previewUrl}
               alt={title}
               fill
               sizes='(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 25vw'
-              objectFit='cover'
-              objectPosition='top center'
-              className='group-hover:scale-105 transition-all dark:brightness-75 dark:hover:brightness-100'
+              className='group-hover:scale-105 transition-all dark:brightness-75 dark:hover:brightness-100 object-top object-cover'
             />
+          ) : isPrivate ? (
+            <p>This project is private</p>
+          ) : (
+            <p>No preview available</p>
           )}
         </div>
         <div className='px-2 py-1'>

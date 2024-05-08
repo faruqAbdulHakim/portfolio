@@ -10,10 +10,12 @@ type Props = Readonly<{
 
 export default function ContactItem({ contact }: Props) {
   const { name, content, contentLink, Icon } = contact;
+
   return (
     <li className='flex flex-col sm:flex-row justify-between sm:items-center gap-2'>
       <div className='flex flex-row items-center gap-2 sm:gap-4'>
         <Button
+          tabIndex={-1}
           variant='flat'
           isIconOnly
           aria-hidden='true'

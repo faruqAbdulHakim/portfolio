@@ -6,7 +6,7 @@ import {
 } from 'react-icons/pi';
 
 // Types
-import type { Contact, Experience, Portfolio, Skill } from '@/types';
+import type { Contact, Experience, Portfolio } from '@/types';
 
 export function getContactList(): Contact[] {
   return [
@@ -34,11 +34,16 @@ export function getContactList(): Contact[] {
 export function getExperienceList(): Experience[] {
   return [
     {
+      position: 'Frontend React.js/Next.js Developer',
+      location: 'PT Andalan Solusi Cemerlang',
+      type: 'Contract',
+      startDate: new Date('2024-03'),
+    },
+    {
       position: 'Freelance Developer',
       location: 'Upwork',
       type: 'Freelance',
       startDate: new Date('2022-11'),
-      endDate: new Date(),
     },
     {
       position: 'Mobile Development Cohort',
@@ -61,58 +66,33 @@ export function getPortfolioList(): Portfolio[] {
     {
       title: 'HTML Email Newsletter',
       subtitle: 'InDesign, Adobe XD, HTML, CSS',
-      imgUrl: '/porto-html-email.png',
-      desc: '',
+      previewUrl: '/porto-html-email.png',
     },
     {
       title: 'HTML Email Signature',
       subtitle: 'Figma, HTML, CSS',
-      imgUrl: '/porto-html-signature.png',
-      desc: '',
+      previewUrl: '/porto-html-signature.png',
     },
     {
       title: 'Slicing UI',
       subtitle: 'HTML, CSS, JS, API',
-      imgUrl: '/porto-slicing-ui.png',
-      desc: '',
+      previewUrl: '/porto-slicing-ui.png',
       externalUrl: 'https://faruqabdulhakim.github.io/slicing-ui/',
     },
     {
       title: 'Human Resource App',
       subtitle: 'Android, Kotlin, Jetpack Compose, MVVM',
-      desc: '',
       isPrivate: true,
     },
     {
       title: 'Pemro.id',
       subtitle: 'Next.js, GSAP, TailwindCSS',
-      imgUrl: '/porto-pemro.png',
-      desc: '',
+      previewUrl: '/porto-pemro.png',
     },
     {
       title: 'Dana Indo Agri',
       subtitle: 'Next.js, Supabase, TailwindCSS',
-      imgUrl: '/porto-danaindoagri.png',
-      desc: '',
+      previewUrl: '/porto-danaindoagri.png',
     },
-  ];
-}
-
-export function getSkillList(): Skill[] {
-  return [
-    'Figma',
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'Next',
-    'Node.js',
-    'Express',
-    'Postgre SQL',
-    'Android',
-    'Kotlin',
-    'Jetpack Compose',
-    'HTML Email',
-    'etc',
   ];
 }

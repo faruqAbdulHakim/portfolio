@@ -23,7 +23,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: "Hi, I'm Faruq 👋",
   description:
-    'Faruq Portfolio Website. Meet Faruq - a passionate Software Developer with a Bachelor of Information Systems degree from Universitas Jember, Indonesia.',
+    'Meet Faruq Abdul Hakim - a passionate Software Developer interested in both web development and mobile development. Enthusiasm for learning and exploring new technologies drives him to continually expand his skills and knowledge in the ever-evolving field of software development. With a strong foundation in computer science and a keen eye for detail, Faruq is committed to delivering high-quality and user-friendly applications.',
   authors: [{ name: 'Faruq Abdul Hakim' }],
   metadataBase: new URL(CONFIG.LIVE_SITE_URL),
   keywords: [
