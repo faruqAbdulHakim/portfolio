@@ -16,7 +16,7 @@ export default async function HomePage() {
       <header className='w-11/12 mx-auto max-w-screen-lg py-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-between'>
         <div className='flex flex-col items-center gap-2 text-center sm:flex-row sm:text-left sm:gap-6'>
           <div className='relative w-24 h-24 rounded-full overflow-hidden'>
-            <Image src='/avatar.jpg' alt='avatar' fill sizes='30vw' />
+            <Image src='/avatar.jpg' alt='avatar' fill sizes='30vw' priority />
           </div>
           <div>
             <h1 className='font-bold text-2xl'>Faruq Abdul Hakim</h1>
