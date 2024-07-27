@@ -46,7 +46,7 @@ export default function ImagesPreview({ images, title }: Props) {
           isBlurred
         />
       </ImagePreviewModal>
-      <div className='mt-6 overflow-hidden'>
+      <div className='mt-6 overflow-x-auto overflow-y-hidden hide-scrollbar'>
         <div
           className='inline-block whitespace-nowrap transition-all scroll-smooth'
           ref={imageContainerRef}

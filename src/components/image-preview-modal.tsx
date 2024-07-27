@@ -9,7 +9,9 @@ import {
   ModalHeader,
   useDisclosure,
 } from '@nextui-org/react';
+import { useCallback, useRef } from 'react';
 import { LuEye } from 'react-icons/lu';
+import QuickPinchZoom, { make3dTransformValue } from 'react-quick-pinch-zoom';
 
 type Props = {
   children: React.ReactNode;
@@ -18,6 +20,19 @@ type Props = {
 
 export default function ImagePreviewModal({ children, src }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const imgRef = useRef<HTMLImageElement | null>(null);
+  const onUpdate = useCallback(
+    ({ x, y, scale }: { x: number; y: number; scale: number }) => {
+      const { current: img } = imgRef;
+
+      if (img) {
+        const value = make3dTransformValue({ x, y, scale });
+        img.style.setProperty('transform', value);
+      }
+    },
+    []
+  );
 
   return (
     <div className='relative group'>
@@ -38,17 +53,25 @@ export default function ImagePreviewModal({ children, src }: Props) {
         placement='center'
         scrollBehavior='outside'
         size='5xl'
-        classNames={{ wrapper: 'px-4 py-16' }}
+        classNames={{ wrapper: 'px-4 py-16', body: 'p-2' }}
       >
         <ModalContent>
           <ModalHeader />
           <ModalBody>
-            <Image
-              src={src}
-              alt='Preview Image'
-              sizes='100vw'
-              className='w-full h-full'
-            />
+            <QuickPinchZoom
+              minZoom={0.1}
+              onUpdate={onUpdate}
+              doubleTapToggleZoom
+              shouldInterceptWheel={() => false}
+            >
+              <Image
+                ref={imgRef}
+                src={src}
+                alt='Preview Image'
+                sizes='100vw'
+                className='w-full h-full'
+              />
+            </QuickPinchZoom>
           </ModalBody>
           <ModalFooter />
         </ModalContent>

@@ -6,3 +6,8 @@
   color: white;
   background-color: teal;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
+}
