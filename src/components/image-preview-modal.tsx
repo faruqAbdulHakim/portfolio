@@ -37,7 +37,7 @@ export default function ImagePreviewModal({ children, src }: Props) {
         onClose={onClose}
         placement='center'
         scrollBehavior='outside'
-        size='3xl'
+        size='5xl'
         classNames={{ wrapper: 'px-4 py-16' }}
       >
         <ModalContent>
