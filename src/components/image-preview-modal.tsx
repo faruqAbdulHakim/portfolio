@@ -27,8 +27,12 @@ export default function ImagePreviewModal({ children, src }: Props) {
       const { current: img } = imgRef;
 
       if (img) {
-        const value = make3dTransformValue({ x, y, scale });
-        img.style.setProperty('transform', value);
+        if (scale < 1.05) {
+          img.style.removeProperty('transform');
+        } else {
+          const value = make3dTransformValue({ x, y, scale });
+          img.style.setProperty('transform', value);
+        }
       }
     },
     []
@@ -62,7 +66,6 @@ export default function ImagePreviewModal({ children, src }: Props) {
               minZoom={0.1}
               onUpdate={onUpdate}
               doubleTapToggleZoom
-              shouldInterceptWheel={() => false}
             >
               <Image
                 ref={imgRef}
@@ -70,6 +73,7 @@ export default function ImagePreviewModal({ children, src }: Props) {
                 alt='Preview Image'
                 sizes='100vw'
                 className='w-full h-full'
+                removeWrapper
               />
             </QuickPinchZoom>
           </ModalBody>
