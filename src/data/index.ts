@@ -7,6 +7,7 @@ import {
 
 // Types
 import type { Contact, Experience, Portfolio } from '@/types';
+import { createSupabaseServerClient } from '@/utils/supabase/server';
 
 export function getContactList(): Contact[] {
   return [
@@ -61,38 +62,24 @@ export function getExperienceList(): Experience[] {
   ];
 }
 
-export function getPortfolioList(): Portfolio[] {
-  return [
-    {
-      title: 'HTML Email Newsletter',
-      subtitle: 'InDesign, Adobe XD, HTML, CSS',
-      previewUrl: '/porto-html-email.png',
-    },
-    {
-      title: 'HTML Email Signature',
-      subtitle: 'Figma, HTML, CSS',
-      previewUrl: '/porto-html-signature.png',
-    },
-    {
-      title: 'Slicing UI',
-      subtitle: 'HTML, CSS, JS, API',
-      previewUrl: '/porto-slicing-ui.png',
-      externalUrl: 'https://faruqabdulhakim.github.io/slicing-ui/',
-    },
-    {
-      title: 'Human Resource App',
-      subtitle: 'Android, Kotlin, Jetpack Compose, MVVM',
-      isPrivate: true,
-    },
-    {
-      title: 'Pemro.id',
-      subtitle: 'Next.js, GSAP, TailwindCSS',
-      previewUrl: '/porto-pemro.png',
-    },
-    {
-      title: 'Dana Indo Agri',
-      subtitle: 'Next.js, Supabase, TailwindCSS',
-      previewUrl: '/porto-danaindoagri.png',
-    },
-  ];
+export async function getPortfolioList(params?: {
+  limit?: number;
+}): Promise<Portfolio[]> {
+  'use server';
+  const supabase = createSupabaseServerClient();
+  let query = supabase.from('portfolios').select().order('created_at');
+  if (params?.limit) {
+    query = query.limit(params.limit);
+  }
+  const result = await query;
+  return result.data || [];
+}
+
+export async function getPortfolioDetail(
+  slug: string
+): Promise<Portfolio | null> {
+  'use server';
+  const supabase = createSupabaseServerClient();
+  const result = await supabase.from('portfolios').select().eq('slug', slug);
+  return result.data?.[0] || null;
 }

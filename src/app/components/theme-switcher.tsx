@@ -25,7 +25,7 @@ export default function ThemeSwitcher() {
       }}
       size='lg'
       radius='full'
-      className='bg-slate-100 text-warning dark:bg-warning dark:text-white transition'
+      className='bg-content2 text-warning dark:bg-warning dark:text-white transition'
     >
       {theme === 'dark' ? (
         <PiSunBold className='w-20 h-20 p-3' />

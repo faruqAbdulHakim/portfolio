@@ -10,20 +10,23 @@ export default async function SkillList() {
     'React',
     'Next',
     'Node.js',
-    'Express',
-    'Postgre SQL',
+    'Nest.js',
+    'PostgreSQL',
+    'MySQL',
     'Android',
     'Kotlin',
     'Jetpack Compose',
     'HTML Email',
-    'etc',
+    'And more',
   ];
 
   return (
-    <ul className='flex flex-wrap gap-4'>
+    <ul className='flex flex-wrap gap-4 select-none'>
       {skills.map((skill) => (
         <li key={skill}>
-          <Chip variant='flat'>{skill}</Chip>
+          <Chip variant='flat' className='transition-all hover:bg-content3'>
+            {skill}
+          </Chip>
         </li>
       ))}
     </ul>

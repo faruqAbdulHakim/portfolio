@@ -50,7 +50,7 @@ type Props = Readonly<{
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang='en' className='transition-all'>
+    <html lang='en' className='transition-all' suppressHydrationWarning>
       <body className={fonts.manrope.className}>
         <Providers>
           {children}

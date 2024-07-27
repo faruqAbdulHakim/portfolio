@@ -1,8 +1,3 @@
-export type Portfolio = {
-  title: string;
-  subtitle: string;
-  previewUrl?: string;
-  description?: string;
-  isPrivate?: boolean;
-  externalUrl?: string;
-};
+import { Database } from './supabase';
+
+export type Portfolio = Database['public']['Tables']['portfolios']['Row'];
