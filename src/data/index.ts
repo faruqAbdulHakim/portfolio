@@ -67,7 +67,10 @@ export async function getPortfolioList(params?: {
 }): Promise<Portfolio[]> {
   'use server';
   const supabase = createSupabaseServerClient();
-  let query = supabase.from('portfolios').select().order('created_at');
+  let query = supabase
+    .from('portfolios')
+    .select()
+    .order('created_at', { ascending: false });
   if (params?.limit) {
     query = query.limit(params.limit);
   }

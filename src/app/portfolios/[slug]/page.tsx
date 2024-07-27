@@ -73,7 +73,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
             <ImagesPreview images={images} title={portfolio.title} />
           ) : (
             <div className='aspect-video rounded-xl overflow-hidden grid place-content-center bg-primary-50 outline outline-content2'>
-              <p>No preview available</p>
+              <p>Preview unavailable</p>
             </div>
           )}
         </div>

@@ -38,7 +38,7 @@ export default function PortfolioItem({ portfolio }: Props) {
           />
         ) : (
           <div className='aspect-video rounded-xl overflow-hidden grid place-content-center bg-primary-50'>
-            <p>No preview available</p>
+            <p>Preview unavailable</p>
           </div>
         )}
         <div className='px-2 pt-2 pb-4'>
