@@ -5,6 +5,7 @@ import {
   Modal,
   ModalBody,
   ModalContent,
+  ModalFooter,
   ModalHeader,
   useDisclosure,
 } from '@nextui-org/react';
@@ -34,8 +35,10 @@ export default function ImagePreviewModal({ children, src }: Props) {
         backdrop='blur'
         isOpen={isOpen}
         onClose={onClose}
-        placement='top'
+        placement='center'
+        scrollBehavior='outside'
         size='3xl'
+        classNames={{ wrapper: 'px-4 py-16' }}
       >
         <ModalContent>
           <ModalHeader />
@@ -47,6 +50,7 @@ export default function ImagePreviewModal({ children, src }: Props) {
               className='w-full h-full'
             />
           </ModalBody>
+          <ModalFooter />
         </ModalContent>
       </Modal>
     </div>
