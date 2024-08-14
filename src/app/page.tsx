@@ -8,16 +8,16 @@ import { Button } from '@nextui-org/react';
 import ImagePreviewModal from '@/components/image-preview-modal';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import ContactList from './components/contact-list';
 import DownloadResumeButton from './components/download-resume-buton';
 import ExperienceList from './components/experience-list';
 import PortfolioList from './components/portfolio-list';
+import PortfolioListFallback from './components/portfolio-list-fallback';
 import SkillList from './components/skill-list';
 
-// Utils
-
-export default async function HomePage() {
-  const portfolios = await getPortfolioList({ limit: 3 });
+export default function HomePage() {
+  const portfoliosPromise = getPortfolioList({ limit: 3 });
 
   return (
     <>
@@ -80,7 +80,9 @@ export default async function HomePage() {
         </section>
         <section className='mt-8'>
           <h2 className='font-bold text-2xl mb-4'>Portfolios</h2>
-          <PortfolioList portfolios={portfolios} />
+          <Suspense fallback={<PortfolioListFallback />}>
+            <PortfolioList portfoliosPromise={portfoliosPromise} />
+          </Suspense>
           <div className='flex justify-end items-center'>
             <Button
               as={Link}

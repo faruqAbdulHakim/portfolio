@@ -6,7 +6,9 @@ import type { Metadata } from 'next';
 
 // Components
 import AppBreadcrumbs from '@/components/app-breadcrumbs';
+import { Suspense } from 'react';
 import PortfolioList from '../components/portfolio-list';
+import PortfolioListFallback from '../components/portfolio-list-fallback';
 
 // Global
 import { CONFIG } from '@/global';
@@ -20,8 +22,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function PortfoliosPage() {
-  const portfolios = await getPortfolioList();
+export default function PortfoliosPage() {
+  const portfoliosPromise = getPortfolioList();
 
   return (
     <>
@@ -31,7 +33,9 @@ export default async function PortfoliosPage() {
         <p className='text-lg mt-1'>Hi, have a look on my portfolios 😄</p>
       </header>
       <main className='pb-16 w-11/12 mx-auto max-w-screen-lg'>
-        <PortfolioList portfolios={portfolios} />
+        <Suspense fallback={<PortfolioListFallback />}>
+          <PortfolioList portfoliosPromise={portfoliosPromise} />
+        </Suspense>
       </main>
     </>
   );

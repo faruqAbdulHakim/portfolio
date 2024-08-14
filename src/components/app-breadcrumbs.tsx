@@ -5,6 +5,7 @@ import { PATH } from '@/constant';
 
 // Components
 import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/react';
+import Link from 'next/link';
 
 // Next
 import { usePathname } from 'next/navigation';
@@ -23,7 +24,7 @@ export default function AppBreadcrumbs() {
   return (
     <>
       <Breadcrumbs>
-        <BreadcrumbItem startContent={<GoHome />} href='/'>
+        <BreadcrumbItem startContent={<GoHome />} as={Link} href='/'>
           Home
         </BreadcrumbItem>
         {pagesPathname.map((pagePathname) => {
@@ -31,6 +32,7 @@ export default function AppBreadcrumbs() {
           if (!pathExist) return null;
           return (
             <BreadcrumbItem
+              as={Link}
               href={pathExist.href || pagePathname}
               key={pathExist.label}
             >
