@@ -26,6 +26,7 @@ export default function ThemeSwitcher() {
       size='lg'
       radius='full'
       className='bg-content2 text-warning dark:bg-warning dark:text-white transition'
+      aria-label='theme switcher'
     >
       {theme === 'dark' ? (
         <PiSunBold className='w-20 h-20 p-3' />
