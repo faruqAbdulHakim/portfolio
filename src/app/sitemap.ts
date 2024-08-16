@@ -18,6 +18,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
+      url: `${CONFIG.LIVE_SITE_URL}/experiences`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${CONFIG.LIVE_SITE_URL}/portfolios`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
