@@ -77,26 +77,36 @@ export default function HomePage() {
           <SkillList />
         </section>
         <section className='mt-8'>
-          <h2 className='font-bold text-2xl mb-4'>Experience</h2>
+          <h2 className='font-bold text-2xl mb-4'>Experiences</h2>
           <Suspense fallback={<ExperienceListFallback />}>
             <ExperienceList experiencesPromise={experiencesPromise} />
+            <div className='flex justify-center items-center'>
+              <Button
+                as={Link}
+                href='/experiences'
+                variant='flat'
+                className='text-right mt-4'
+              >
+                See in details &gt;
+              </Button>
+            </div>
           </Suspense>
         </section>
         <section className='mt-8'>
           <h2 className='font-bold text-2xl mb-4'>Portfolios</h2>
           <Suspense fallback={<PortfolioListFallback />}>
             <PortfolioList portfoliosPromise={portfoliosPromise} />
+            <div className='flex justify-center items-center'>
+              <Button
+                as={Link}
+                href='/portfolios'
+                variant='flat'
+                className='text-right mt-4'
+              >
+                See more &gt;
+              </Button>
+            </div>
           </Suspense>
-          <div className='flex justify-end items-center'>
-            <Button
-              as={Link}
-              href='/portfolios'
-              variant='flat'
-              className='text-right mt-4'
-            >
-              See more &gt;
-            </Button>
-          </div>
         </section>
         <section className='mt-4'>
           <h2 className='font-bold text-2xl mb-4'>Contact</h2>
