@@ -8,7 +8,11 @@ export const PATH = [
     href: '/',
   },
   {
-    path: /^\/portfolios$/,
+    path: /^\/experiences\/?$/,
+    label: 'Experiences',
+  },
+  {
+    path: /^\/portfolios\/?$/,
     label: 'Portfolios',
     href: '/portfolios',
   },

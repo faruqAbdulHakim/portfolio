@@ -30,7 +30,7 @@ export default function PortfoliosPage() {
       <header className='py-8 w-11/12 mx-auto max-w-screen-lg'>
         <AppBreadcrumbs />
         <h1 className='font-bold text-3xl mt-4'>Faruq&rsquo;s Portfolios</h1>
-        <p className='text-lg mt-1'>Hi, have a look on my portfolios 😄</p>
+        <h2 className='text-lg mt-1'>Hi, have a look on my portfolios 😄</h2>
       </header>
       <main className='pb-16 w-11/12 mx-auto max-w-screen-lg'>
         <Suspense fallback={<PortfolioListFallback />}>
