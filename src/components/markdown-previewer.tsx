@@ -11,7 +11,7 @@ export default function MarkdownPreviewer({ content }: Props) {
     <Markdown
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw]}
-      className='prose prose-headings:m-0 prose-headings:mb-4'
+      className='prose prose-headings:m-0 prose-headings:mb-4 text-foreground'
     >
       {content}
     </Markdown>
