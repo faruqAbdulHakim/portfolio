@@ -1,11 +1,12 @@
-// Data Source
-import { getExperienceList } from '@/data';
-
-// Components
+import { Experience } from '@/types';
 import ExperienceItem from './experience-item';
 
-export default function ExperienceList() {
-  const experiences = getExperienceList();
+type Props = {
+  experiencesPromise: Promise<Experience[]>;
+};
+
+export default async function ExperienceList({ experiencesPromise }: Props) {
+  const experiences = await experiencesPromise;
 
   return (
     <ul className='space-y-6'>

@@ -1,8 +1,3 @@
-export type Experience = {
-  position: string;
-  location: string;
-  type?: 'Freelance' | 'Contract';
-  startDate: Date;
-  endDate?: Date;
-  description?: string;
-};
+import { Database } from './supabase';
+
+export type Experience = Database['public']['Tables']['experiences']['Row'];

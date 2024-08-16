@@ -1,5 +1,5 @@
 // Data sources
-import { getPortfolioList } from '@/data';
+import { getExperienceList, getPortfolioList } from '@/data';
 
 // UI Components
 import { Button } from '@nextui-org/react';
@@ -12,11 +12,13 @@ import { Suspense } from 'react';
 import ContactList from './components/contact-list';
 import DownloadResumeButton from './components/download-resume-buton';
 import ExperienceList from './components/experience-list';
+import ExperienceListFallback from './components/experience-list-fallback';
 import PortfolioList from './components/portfolio-list';
 import PortfolioListFallback from './components/portfolio-list-fallback';
 import SkillList from './components/skill-list';
 
 export default function HomePage() {
+  const experiencesPromise = getExperienceList();
   const portfoliosPromise = getPortfolioList({ limit: 3 });
 
   return (
@@ -76,7 +78,9 @@ export default function HomePage() {
         </section>
         <section className='mt-8'>
           <h2 className='font-bold text-2xl mb-4'>Experience</h2>
-          <ExperienceList />
+          <Suspense fallback={<ExperienceListFallback />}>
+            <ExperienceList experiencesPromise={experiencesPromise} />
+          </Suspense>
         </section>
         <section className='mt-8'>
           <h2 className='font-bold text-2xl mb-4'>Portfolios</h2>
