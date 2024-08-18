@@ -1,5 +1,8 @@
 'use client';
 
+// Hooks
+import { useRouter } from 'next/navigation';
+
 // Providers
 import { ThemeProvider } from 'next-themes';
 
@@ -11,8 +14,10 @@ type Props = Readonly<{
 }>;
 
 export default function Providers({ children }: Props) {
+  const router = useRouter();
+
   return (
-    <NextUIProvider>
+    <NextUIProvider navigate={router.push}>
       <ThemeProvider attribute='class' defaultTheme='light'>
         {children}
       </ThemeProvider>
