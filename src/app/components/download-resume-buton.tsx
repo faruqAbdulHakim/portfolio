@@ -10,13 +10,15 @@ export default function DownloadResumeButton() {
   const [isPending, setIsPending] = useState(false);
 
   async function downloadResume() {
-    const res = await fetch('/resume.pdf');
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/common/resume.pdf`
+    );
     if (!res.ok) return;
     const blob = await res.blob();
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', 'resume.pdf');
+    link.setAttribute('download', 'Resume Faruq Abdul Hakim.pdf');
     link.click();
   }
 
