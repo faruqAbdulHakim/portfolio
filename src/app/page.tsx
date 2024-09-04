@@ -54,22 +54,14 @@ export default function HomePage() {
             especially in Web Development and Android Development.
           </p>
           <p className='mt-2'>
-            Currently, I work as Frontend Web developer in a company in my city
-            Jember, East Java, Indonesia. I use some tech on there, such as
-            Next.js, React.js, Chakra UI, NextUI, TailwindCSS, and many more.
-            Due to my experience in Android Development, I also usually involved
-            to other team processes, for example to carry out mobile application
-            test.
+            Proficient in top-notch web technologies like React.js and Next.js
+            with type-safe approach by utilising Typescript. As well as backend
+            frameworks such as Express.js and Nest.js. Also familiar with Kotlin
+            and Jetpack Compose for Android Development.
           </p>
           <p className='mt-2'>
-            In addition to my full-time job, I also do some small tasks from my
-            freelancer job, like converting the provided design into a
-            responsive site or doing HTML email for company marketing purposes.
-          </p>
-          <p className='mt-2'>
-            I love to explore new things. Currently, I have willingness to have
-            knowledge on backend development so that I have the ability to build
-            an application either frontend side or backend side.
+            Eager to explore new things, especially related to software
+            development topics.
           </p>
         </section>
         <section className='mt-6'>
