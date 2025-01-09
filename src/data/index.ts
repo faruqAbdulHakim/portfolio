@@ -33,7 +33,7 @@ export function getContactList(): Contact[] {
 }
 
 export async function getExperienceList(): Promise<Experience[]> {
-  const supabase = createSupabaseServerClient();
+  const supabase = await createSupabaseServerClient();
   const result = await supabase
     .from('experiences')
     .select()
@@ -45,7 +45,7 @@ export async function getPortfolioList(params?: {
   limit?: number;
 }): Promise<Portfolio[]> {
   'use server';
-  const supabase = createSupabaseServerClient();
+  const supabase = await createSupabaseServerClient();
   let query = supabase
     .from('portfolios')
     .select()
@@ -61,7 +61,7 @@ export async function getPortfolioDetail(
   slug: string
 ): Promise<Portfolio | null> {
   'use server';
-  const supabase = createSupabaseServerClient();
+  const supabase = await createSupabaseServerClient();
   const result = await supabase.from('portfolios').select().eq('slug', slug);
   return result.data?.[0] || null;
 }

@@ -6,16 +6,15 @@ import { Suspense } from 'react';
 import PortfolioDetail from './components/portfolio-detail';
 
 type Props = {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const portfolio = await getPortfolioDetail(params.slug);
+  const slug = (await params).slug;
+  const portfolio = await getPortfolioDetail(slug);
 
   if (!portfolio) return {};
 
@@ -37,7 +36,8 @@ export async function generateMetadata(
   };
 }
 
-export default function PortfolioDetailPage({ params }: Props) {
+export default async function PortfolioDetailPage(props: Props) {
+  const params = await props.params;
   const portfolioPromise = getPortfolioDetail(params.slug);
 
   return (
