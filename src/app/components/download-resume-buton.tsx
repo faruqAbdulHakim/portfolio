@@ -1,20 +1,19 @@
 'use client';
 
-// Hooks
-import { useState } from 'react';
-
-// UI Components
+import { getResumeFile } from '@/data';
 import { Button } from '@nextui-org/react';
+import { useState } from 'react';
 
 export default function DownloadResumeButton() {
   const [isPending, setIsPending] = useState(false);
 
   async function downloadResume() {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/common/resume.pdf`
-    );
-    if (!res.ok) return;
-    const blob = await res.blob();
+    const buffer = await getResumeFile();
+    const blob = new Blob([buffer]);
+    // const res = await fetch(fileUrl);
+    // if (!res.ok) return;
+    // const blob = await res.blob();
+    console.log(blob, buffer);
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;

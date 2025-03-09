@@ -1,15 +1,14 @@
-// Icons
+'use server';
+
+import type { Contact, Experience, Portfolio } from '@/types';
+import { createSupabaseServerClient } from '@/utils/supabase/server';
 import {
   PiEnvelopeLight,
   PiGithubLogoLight,
   PiLinkedinLogoLight,
 } from 'react-icons/pi';
 
-// Types
-import type { Contact, Experience, Portfolio } from '@/types';
-import { createSupabaseServerClient } from '@/utils/supabase/server';
-
-export function getContactList(): Contact[] {
+export async function getContactList(): Promise<Contact[]> {
   return [
     {
       name: 'Email',
@@ -44,7 +43,6 @@ export async function getExperienceList(): Promise<Experience[]> {
 export async function getPortfolioList(params?: {
   limit?: number;
 }): Promise<Portfolio[]> {
-  'use server';
   const supabase = await createSupabaseServerClient();
   let query = supabase
     .from('portfolios')
@@ -60,8 +58,18 @@ export async function getPortfolioList(params?: {
 export async function getPortfolioDetail(
   slug: string
 ): Promise<Portfolio | null> {
-  'use server';
   const supabase = await createSupabaseServerClient();
   const result = await supabase.from('portfolios').select().eq('slug', slug);
   return result.data?.[0] || null;
+}
+
+export async function getResumeFile(): Promise<Buffer> {
+  const supabase = await createSupabaseServerClient();
+  const res = await supabase.storage.from('common').download('resume.pdf');
+  if (res.error) {
+    throw res.error;
+  }
+  const arrayBuffer = await res.data.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+  return buffer;
 }

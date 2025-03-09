@@ -1,11 +1,8 @@
-// Data Source
 import { getContactList } from '@/data';
-
-// Components
 import ContactItem from './contact-item';
 
-export default function ContactList() {
-  const contacts = getContactList();
+export default async function ContactList() {
+  const contacts = await getContactList();
 
   return (
     <ul className='space-y-6'>
