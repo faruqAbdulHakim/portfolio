@@ -10,10 +10,6 @@ export default function DownloadResumeButton() {
   async function downloadResume() {
     const buffer = await getResumeFile();
     const blob = new Blob([buffer]);
-    // const res = await fetch(fileUrl);
-    // if (!res.ok) return;
-    // const blob = await res.blob();
-    console.log(blob, buffer);
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;

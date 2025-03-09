@@ -47,12 +47,20 @@ export async function getPortfolioList(params?: {
   let query = supabase
     .from('portfolios')
     .select()
-    .order('created_at', { ascending: false });
+    .order('order', { ascending: false });
   if (params?.limit) {
     query = query.limit(params.limit);
   }
-  const result = await query;
-  return result.data || [];
+
+  const result = ((await query).data ?? []).map((it) => {
+    it.thumbnail = it.thumbnail
+      ? supabase.storage.from('portfolio').getPublicUrl(it.thumbnail).data
+          .publicUrl
+      : null;
+    return it;
+  });
+
+  return result;
 }
 
 export async function getPortfolioDetail(
@@ -60,7 +68,21 @@ export async function getPortfolioDetail(
 ): Promise<Portfolio | null> {
   const supabase = await createSupabaseServerClient();
   const result = await supabase.from('portfolios').select().eq('slug', slug);
-  return result.data?.[0] || null;
+  const data = result.data?.[0] ?? null;
+
+  if (data === null) {
+    return null;
+  }
+
+  data.thumbnail = data.thumbnail
+    ? supabase.storage.from('portfolio').getPublicUrl(data.thumbnail).data
+        .publicUrl
+    : null;
+  data.images = data.images.map((it) => {
+    return supabase.storage.from('portfolio').getPublicUrl(it).data.publicUrl;
+  });
+
+  return data;
 }
 
 export async function getResumeFile(): Promise<Buffer> {

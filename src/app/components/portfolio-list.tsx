@@ -1,4 +1,3 @@
-// Components
 import { Portfolio } from '@/types';
 import PortfolioItem from './portfolio-item';
 
